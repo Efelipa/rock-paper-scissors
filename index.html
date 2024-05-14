@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Rock, paper and scissors game -->
+    <script>
+        // INICIO
+        // Declarar las opciones de manos
+        // Pedir opcion de manos del jugador
+        // Seleccionar de manera aleatoria uno de esas opciones
+        // cuando la opcion de la mano del jugador es beneficiosa, imprimir "ganaste"
+        // sino 'perdiste'
+        //FIN
+        const handsOptions = ['rock', 'paper', 'scissors'];
+        let playerHand = prompt('Qué usarás, papel, piedra o tijeras?').toLocaleLowerCase();
+        console.log(playerHand)
+        startGame(playerHand)
+
+        function startGame(playerOption) {
+            let randomizer = Math.floor(Math.random() * handsOptions.length);
+            let randomOption = handsOptions[randomizer];
+            console.log(randomizer)
+            console.log(randomOption)
+            if(playerOption && handsOptions.includes(playerOption)) {
+                if(playerOption === randomOption) {
+                    console.log('Empate');
+                } else {
+                    if(playerOption === 'rock' && playerOption !== 'scissors') {
+                        console.log('El jugador gana')
+                    }
+                }
+            } else {
+                console.log('Selecciona una opción')
+            }
+        }
+
+    </script>
+</body>
+</html>
