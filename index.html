@@ -17,21 +17,27 @@
         // sino 'perdiste'
         //FIN
         const handsOptions = ['rock', 'paper', 'scissors'];
-        let playerHand = prompt('Qué usarás, papel, piedra o tijeras?').toLocaleLowerCase();
+        let playerHand = prompt('Choose between rock, paper o scissors').toLocaleLowerCase();
         console.log(playerHand)
         startGame(playerHand)
 
         function startGame(playerOption) {
             let randomizer = Math.floor(Math.random() * handsOptions.length);
             let randomOption = handsOptions[randomizer];
-            console.log(randomizer)
-            console.log(randomOption)
+            
             if(playerOption && handsOptions.includes(playerOption)) {
                 if(playerOption === randomOption) {
-                    console.log('Empate');
+                    alert('Empate');
                 } else {
-                    if(playerOption === 'rock' && playerOption !== 'scissors') {
-                        console.log('El jugador gana')
+                    if(playerOption === 'rock') {
+                        if(randomOption === 'paper') alert(`${randomOption} wins over ${playerOption}`);
+                        if(randomOption === 'scissors') alert(`${playerOption} wins over ${randomOption}`);
+                    } else if(playerOption === 'paper') {
+                        if(randomOption === 'scissors') alert(`${randomOption} wins over ${playerOption}`);
+                        if(randomOption === 'rock') alert(`${playerOption} wins over ${randomOption}`);
+                    } else if (playerOption === 'scissors') {
+                        if(randomOption === 'rock') alert(`${randomOption} wins over ${playerOption}`);
+                        if(randomOption === 'paper') alert(`${playerOption} wins over ${randomOption}`);
                     }
                 }
             } else {
