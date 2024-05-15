@@ -27,17 +27,17 @@
             
             if(playerOption && handsOptions.includes(playerOption)) {
                 if(playerOption === randomOption) {
-                    alert('Empate');
+                    alert('Draw');
                 } else {
                     if(playerOption === 'rock') {
-                        if(randomOption === 'paper') alert(`${randomOption} wins over ${playerOption}`);
-                        if(randomOption === 'scissors') alert(`${playerOption} wins over ${randomOption}`);
+                        if(randomOption === 'paper') alert(`You lose. ${randomOption} wins over ${playerOption}`);
+                        if(randomOption === 'scissors') alert(`You win. ${playerOption} wins over ${randomOption}`);
                     } else if(playerOption === 'paper') {
-                        if(randomOption === 'scissors') alert(`${randomOption} wins over ${playerOption}`);
-                        if(randomOption === 'rock') alert(`${playerOption} wins over ${randomOption}`);
+                        if(randomOption === 'scissors') alert(`You lose. ${randomOption} wins over ${playerOption}`);
+                        if(randomOption === 'rock') alert(`You win. ${playerOption} wins over ${randomOption}`);
                     } else if (playerOption === 'scissors') {
-                        if(randomOption === 'rock') alert(`${randomOption} wins over ${playerOption}`);
-                        if(randomOption === 'paper') alert(`${playerOption} wins over ${randomOption}`);
+                        if(randomOption === 'rock') alert(`You lose. ${randomOption} wins over ${playerOption}`);
+                        if(randomOption === 'paper') alert(`You win. ${playerOption} wins over ${randomOption}`);
                     }
                 }
             } else {
