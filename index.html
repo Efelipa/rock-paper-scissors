@@ -8,43 +8,6 @@
 <body>
     
     <!-- Rock, paper and scissors game -->
-    <script>
-        // INICIO
-        // Declarar las opciones de manos
-        // Pedir opcion de manos del jugador
-        // Seleccionar de manera aleatoria uno de esas opciones
-        // cuando la opcion de la mano del jugador es beneficiosa, imprimir "ganaste"
-        // sino 'perdiste'
-        //FIN
-        const handsOptions = ['rock', 'paper', 'scissors'];
-        let playerHand = prompt('Choose between rock, paper o scissors').toLocaleLowerCase();
-        console.log(playerHand)
-        startGame(playerHand)
-
-        function startGame(playerOption) {
-            let randomizer = Math.floor(Math.random() * handsOptions.length);
-            let randomOption = handsOptions[randomizer];
-            
-            if(playerOption && handsOptions.includes(playerOption)) {
-                if(playerOption === randomOption) {
-                    alert('Draw');
-                } else {
-                    if(playerOption === 'rock') {
-                        if(randomOption === 'paper') alert(`You lose. ${randomOption} wins over ${playerOption}`);
-                        if(randomOption === 'scissors') alert(`You win. ${playerOption} wins over ${randomOption}`);
-                    } else if(playerOption === 'paper') {
-                        if(randomOption === 'scissors') alert(`You lose. ${randomOption} wins over ${playerOption}`);
-                        if(randomOption === 'rock') alert(`You win. ${playerOption} wins over ${randomOption}`);
-                    } else if (playerOption === 'scissors') {
-                        if(randomOption === 'rock') alert(`You lose. ${randomOption} wins over ${playerOption}`);
-                        if(randomOption === 'paper') alert(`You win. ${playerOption} wins over ${randomOption}`);
-                    }
-                }
-            } else {
-                console.log('Selecciona una opción')
-            }
-        }
-
-    </script>
+    <script src="set-game.js"></script>
 </body>
 </html>
