@@ -1,25 +1,35 @@
 const startGame = () => {
     console.log('Hello world!');
     const OPTIONS = ['rock', 'paper', 'scissors'];
-    const humanSelection = getHumanChoice(OPTIONS);
-    const computerSelection = getComputerChoice(OPTIONS);
     let computerScore = 0;
     let humanScore = 0;
-    // const playRound = (humanChoice, computerChoice) => {
-    //     if(humanChoice === computerChoice) alert(`Draw between ${humanChoice} and ${computerChoice}`);
-    //     if(humanChoice === 'rock' && computerChoice === 'paper') {
-    //         alert(`You lose, ${computerChoice} beats ${humanChoice}`);
-    //         return 'computer';
-    //     }
-    // }
-    // playRound(humanSelection, computerSelection);
-    // if(playRound(humanSelection, computerSelection) === 'computer') {
-    //     computerScore++;
-    // }       
-    // console.log(computerScore);
+
+    for(let i = 0; i < 10; i++) {
+        const humanSelection = getHumanChoice(OPTIONS);
+        const computerSelection = getComputerChoice(OPTIONS);
+        const didThePlayerWin = playRound(humanSelection, computerSelection);
+        (didThePlayerWin) ? humanScore++ : computerScore++;
+        if(computerScore + humanScore === 5) {
+            alert(`Game over!`); 
+            break;
+        }
+    }
 }
 
-
+const playRound = (humanChoice, computerChoice) => {
+    if(humanChoice === computerChoice) {
+        alert(`Draw!!! Both player selected ${humanChoice}`);
+        alert(`Round over`)
+    } else if((humanChoice === 'rock' && computerChoice === 'scissors') || (humanChoice === 'paper' && computerChoice === 'rock') || (humanChoice === 'scissors' && computerChoice === 'paper')) {
+        alert(`You won! ${humanChoice} beats ${computerChoice}`);
+        alert(`Round over`)
+        return true;
+    } else {
+        alert(`You lost! ${computerChoice} beats ${humanChoice}`);
+        alert(`Round over`);
+        return false;
+    }
+}
 
 const getComputerChoice = (OPTIONS) => {
     let randomizer = Math.floor(Math.random() * OPTIONS.length);
