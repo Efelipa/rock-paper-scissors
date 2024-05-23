@@ -4,30 +4,35 @@ const startGame = () => {
     let computerScore = 0;
     let humanScore = 0;
 
-    for(let i = 0; i < 10; i++) {
+    for(let i = 0; i < 6; i++) {
         const humanSelection = getHumanChoice(OPTIONS);
         const computerSelection = getComputerChoice(OPTIONS);
         const didThePlayerWin = playRound(humanSelection, computerSelection);
         (didThePlayerWin) ? humanScore++ : computerScore++;
-        if(computerScore + humanScore === 5) {
-            alert(`Game over!`); 
-            break;
+        if (computerScore + humanScore === 5) {
+            alert('Game over');
+            if(computerScore > humanScore) alert('Computer wins.');
+            if(humanScore > computerScore) alert('You win the game. Congratulations.');
         }
     }
 }
 
 const playRound = (humanChoice, computerChoice) => {
-    if(humanChoice === computerChoice) {
-        alert(`Draw!!! Both player selected ${humanChoice}`);
-        alert(`Round over`)
-    } else if((humanChoice === 'rock' && computerChoice === 'scissors') || (humanChoice === 'paper' && computerChoice === 'rock') || (humanChoice === 'scissors' && computerChoice === 'paper')) {
-        alert(`You won! ${humanChoice} beats ${computerChoice}`);
-        alert(`Round over`)
-        return true;
+    if(!humanChoice) {
+        startGame();
     } else {
-        alert(`You lost! ${computerChoice} beats ${humanChoice}`);
-        alert(`Round over`);
-        return false;
+        if(humanChoice === computerChoice) {
+            alert(`Draw!!! Both player selected ${humanChoice}`);
+            alert(`Round over`)
+        } else if((humanChoice === 'rock' && computerChoice === 'scissors') || (humanChoice === 'paper' && computerChoice === 'rock') || (humanChoice === 'scissors' && computerChoice === 'paper')) {
+            alert(`You won! ${humanChoice} beats ${computerChoice}`);
+            alert(`Round over`)
+            return true;
+        } else {
+            alert(`You lost! ${computerChoice} beats ${humanChoice}`);
+            alert(`Round over`);
+            return false;
+        }
     }
 }
 
