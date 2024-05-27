@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+#root {
+    display: grid;
+    place-items: center;
+}
+.game-button {
+    background: rgb(96, 96, 216);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 5px 15px;
+    margin-block: 5px;
+    cursor: pointer;
+}
+.game-button:hover {
+    scale: 1.05;
+    opacity: 0.9;
+}
