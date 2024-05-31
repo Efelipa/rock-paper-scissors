@@ -26,20 +26,37 @@ body {
     scale: 1.05;
     opacity: 0.9;
 }
+.score {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}
 .results {
     font-size: 30px;
     margin: 10px;
     padding: 10px;
     text-align: center;
     width: 99%;
-    color: white;
 }
 .draw {
     background: rgb(104, 177, 230);
+    color: white;
 }
 .victory {
     background: rgb(20, 200, 50);
+    color: white;
 }
 .defeat {
     background: rgb(250, 20, 50);
+    color: white;
+}
+.won {
+    background: rgb(26, 141, 26);
+    font-size: 35px;
+    color: white;
+}
+.lost {
+    background: rgb(189, 13, 36);
+    font-size: 35px;
+    color: white;
 }
